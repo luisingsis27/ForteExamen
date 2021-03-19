@@ -25,11 +25,7 @@ namespace ForteExamen.ViewModels
             _obclientes = new ObservableCollection<Clientes>();
             CargarClientes();
 
-            //_obclientes.Add(new Clientes() { correoElectronico = "djkcjkdsbckjscbs", nombreCompleto = "ndwjkdjwebdjwbdw", estatusClienteId = 1 });
-            //_obclientes.Add(new Clientes() { correoElectronico = "djkcjkdsbckjscbs", nombreCompleto = "ndwjkdjwebdjwbdw", estatusClienteId = 1 });
-            //_obclientes.Add(new Clientes() { correoElectronico = "djkcjkdsbckjscbs", nombreCompleto = "ndwjkdjwebdjwbdw", estatusClienteId = 1 });
-            //_obclientes.Add(new Clientes() { correoElectronico = "djkcjkdsbckjscbs", nombreCompleto = "ndwjkdjwebdjwbdw", estatusClienteId = 1 });
-
+          
         }
 
         void CargarClientes()

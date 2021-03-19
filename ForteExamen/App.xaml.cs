@@ -12,8 +12,6 @@ namespace ForteExamen
             InitializeComponent();
 
             MainPage = new Views.LoginPage();
-            //MainPage = new Views.ClientesPage();
-            //MainPage = new Views.ClienteCRUDPage();
         }
 
         protected override void OnStart()
