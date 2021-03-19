@@ -21,8 +21,7 @@ namespace ForteExamen.ViewModels
         {
             try
             {
-                _usuario = "FORTEDEV";
-                _password = "Apply2019@pass";
+                
                 if (!string.IsNullOrEmpty(_usuario) && !string.IsNullOrEmpty(_password))
                 {
                     await Conexion.Instance.Login(_usuario, _password);
