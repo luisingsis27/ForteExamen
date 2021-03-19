@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ForteExamen.Views.ClienteCRUDPage"
+    xmlns:vm="clr-namespace:ForteExamen.ViewModels">
+
+    <ContentPage.Content>
+        <ScrollView>
+         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+
+             <!--Titulo-->
+            <Label Grid.Column="1" Grid.Row="1"
+                        x:Name="lblTitulo" TextColor="Black" Text="{Binding Titulo}" FontSize="Title"></Label>
+
+             <!--Nombre-->
+            <Label Grid.Column="1" Grid.Row="2"
+                        x:Name="lblNombre" TextColor="Black" Text="Nombre completo"></Label>
+
+             <Entry Grid.Column="1" Grid.Row="3" x:Name="txtNombre" Text="{Binding Nombre}" ></Entry>
+
+             <!--Correo-->
+             <Label Grid.Column="1" Grid.Row="4"
+                        x:Name="lblCorreo" TextColor="Black" Text="Correo electronico"></Label>
+
+             <Entry Grid.Column="1" Grid.Row="5" x:Name="txtCorreo" Text="{Binding Correo}" ></Entry>
+
+             <!--Pasword-->
+             <Label Grid.Column="1" Grid.Row="6"
+                        x:Name="lblPassword"  TextColor="Black" Text="Password"></Label>
+
+             <Entry Grid.Column="1" Grid.Row="7" x:Name="txtPassword" IsPassword="True" Text="{Binding Password}" ></Entry>
+
+             <!--Fechanacimiento-->
+             <Label Grid.Column="1" Grid.Row="8"
+                        x:Name="lblFechaNacimiento" TextColor="Black" Text="Fecha nacimiento"></Label>
+
+             <DatePicker Grid.Column="1" Grid.Row="9" x:Name="txtFechaNacimiento"  Date="{Binding FechaNacimiento}" ></DatePicker>
+
+
+             <!--Estatus-->
+             <Label Grid.Column="1" Grid.Row="10"
+                        x:Name="lblEstatus" TextColor="Black" Text="Estatus persona"></Label>
+
+             <Picker Grid.Column="1" Grid.Row="11" x:Name="pickEstatus" Title="SELECCIONA UN ESTATUS"
+                     SelectedItem="{Binding EstatusPersonaItem, Mode=TwoWay}" ItemsSource="{Binding ListEstatusPesona}"
+                     ItemDisplayBinding="{Binding EstatusName}" SelectedIndex="{Binding EstatusIndex}">
+           
+             </Picker>
+
+             <!--Domicilio-->
+             <Label Grid.Column="1" Grid.Row="12"
+                        x:Name="lblDomicilio" TextColor="Black" Text="Domicilio"></Label>
+
+             <Entry Grid.Column="1" Grid.Row="13" x:Name="txtDomicilio" Text="{Binding Domicilio}" ></Entry>
+
+             <!--Limite credito-->
+             <Label Grid.Column="1" Grid.Row="14"
+                        x:Name="lblLimiteCredito" TextColor="Black" Text="Limite crédito"></Label>
+
+             <Entry Grid.Column="1" Grid.Row="15" x:Name="txtLimiteCredito" Text="{Binding LimiteCredito}" ></Entry>
+
+             <!--RFC-->
+             <Label Grid.Column="1" Grid.Row="16"
+                        x:Name="lblRFC" TextColor="Black" Text="RFC"></Label>
+
+             <Entry Grid.Column="1" Grid.Row="17" x:Name="txtRFC" Text="{Binding RFC}" ></Entry>
+
+             <!--Telefono-->
+             <Label Grid.Column="1" Grid.Row="18"
+                        x:Name="lblTelefono" TextColor="Black" Text="Telefono"></Label>
+
+             <Entry Grid.Column="1" Grid.Row="19" x:Name="txtTelefono" Text="{Binding Telefono}" ></Entry>
+
+
+             <StackLayout Grid.Column="1" Grid.Row="20" Orientation="Horizontal">
+                 <Button 
+                     x:Name="btnCancelar" Text="Cancelar" BackgroundColor="Red" TextColor="White" Command="{Binding CancelarCommand}"></Button>
+                 <Button 
+                     x:Name="btnAceptar" Text="Aceptar" BackgroundColor="Blue" TextColor="White" Command="{Binding AceptarCommand}"></Button>
+              </StackLayout>
+         </Grid>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

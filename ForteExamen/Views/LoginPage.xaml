@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ForteExamen.Views.LoginPage"
+             xmlns:vm="clr-namespace:ForteExamen.ViewModels">
+     <ContentPage.BindingContext>
+        <vm:LoginVM/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="45" />
+                <RowDefinition Height="55" />
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+        
+        
+        <Entry Grid.Column="1" Grid.Row="1"
+               x:Name="txtUsuario" Placeholder="Usuario" PlaceholderColor="Blue"
+               Text="{Binding Usuario}"/>
+
+        <Entry Grid.Column="1" Grid.Row="2"
+               x:Name="txtPassword" Placeholder="Password" PlaceholderColor="Blue"
+               Text="{Binding Password}" IsPassword="True"/>
+
+         <Button Grid.Column="1" Grid.Row="3"
+                 x:Name="btnLogin" Text="Ingresar" Command="{Binding LoguearCommand}"></Button>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

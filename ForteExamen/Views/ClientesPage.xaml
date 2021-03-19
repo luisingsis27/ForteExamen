@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ForteExamen.Views.ClientesPage"
+    xmlns:vm="clr-namespace:ForteExamen.ViewModels"
+    xmlns:cell="clr-namespace:ForteExamen.Views.Cells">
+
+    <ContentPage.BindingContext>
+        <vm:ClientesVM/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+        
+
+
+             <Button Grid.Column="2" Grid.Row="1"
+                 x:Name="btnAgregar" Text="Agregar cliente" BackgroundColor="Green" TextColor="White"
+                     FontSize="Small" WidthRequest="160"
+                     Command="{Binding AgregarClienteCommand}"></Button>
+
+            <Label Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" x:Name="lblListadoClientes" Text="LISTADO &#10;CLIENTES"
+                   FontAttributes="Bold" 
+                   FontSize="Title" TextColor="Black" ></Label>
+
+
+
+            <Grid Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" 
+                  ColumnSpacing="3" RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                 <Label Grid.Column="0" Grid.Row="0"
+                        x:Name="lblNombre" BackgroundColor="Black" TextColor="White" Text=" Nombre"
+                        VerticalTextAlignment="End"></Label>
+                 <Label Grid.Column="1" Grid.Row="0"
+                        x:Name="lblCorreo" BackgroundColor="Black" TextColor="White" Text=" Correo electrónico"
+                        VerticalTextAlignment="End"></Label>
+                 
+                <ListView Grid.Column="0" Grid.Row="1" x:Name="lvClientes" Grid.ColumnSpan="2"
+                           ItemsSource="{Binding OBClientes}" SelectedItem="{Binding SelectedCliente,Mode=TwoWay}"
+				    CachingStrategy="RecycleElement" RowHeight="90">
+			        <ListView.ItemTemplate>
+                        <DataTemplate >
+                           <ViewCell>
+                               <SwipeView>
+                                   <cell:ClientesCell> </cell:ClientesCell>
+                                    <SwipeView.LeftItems>
+                                        <SwipeItems
+                                            Mode="Reveal"
+                                            SwipeBehaviorOnInvoked="Close"  >
+                                            <SwipeItem
+                                                Text="Eliminar" 
+                                                BackgroundColor="Red" 
+                                                       CommandParameter="{Binding .}"
+                                                       Command="{Binding Path=BindingContext.EliminarClienteCommand, Source={x:Reference lvClientes}}">
+                                            </SwipeItem>
+                                        </SwipeItems>
+                                    </SwipeView.LeftItems>
+                               </SwipeView>
+				           </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+		        </ListView>
+            </Grid>
+             
+
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ForteExamen.Views.Cells.ClientesCell"
+    BackgroundColor="Blue">
+
+    <ContentView.Content>
+     
+       
+         <Grid ColumnSpacing="3" RowSpacing="0" BackgroundColor="Brown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0"
+                        x:Name="lblNombre"  TextColor="Black" Text="{Binding nombreCompleto}"
+                        VerticalTextAlignment="Center"></Label>
+            <Label Grid.Column="1" Grid.Row="0"
+                        x:Name="lblCorreo" TextColor="Black" Text="{Binding correoElectronico}"
+                        VerticalTextAlignment="Center"></Label>
+
+
+
+        </Grid>
+
+           
+    </ContentView.Content>
+
+</ContentView>
